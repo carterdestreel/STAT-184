@@ -17,3 +17,27 @@ STAT-184/
 ├── final/
 ├── notes/
 └── README.md
+```
+
+## 📝 Contents
+
+This repository contains my work for STAT 184, including:
+
+- Homework and assignments
+- Midterm Project
+- Final Project
+- Projects
+- Course notes and practice materials
+
+## 🛠️ Tools
+
+Depending on the assignment, coursework may use:
+
+- R
+- RStudio
+- Statistical methods and data analysis
+- Data visualization
+
+## ⚠️ Academic Integrity
+
+This repository is intended primarily as a record of my own coursework and learning. Current course assignments should not be copied or submitted by other students as their own work.
