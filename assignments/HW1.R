@@ -1,3 +1,4 @@
+# Problem 1
 student_id <- c("S01", "S02", "S03", "S04", "S05", "S06")
 section <- c("A", "B", "A", "B", "A", "B")
 quiz1 <- c(82, 91, 76, 88, 95, 69)
@@ -57,11 +58,9 @@ str(course_record)
 
 
 
+## PART B
 ##
-##
-# Part B
 print(score_matrix["S04", "quiz2"])
-
 print(score_matrix[1:2, , drop=FALSE])
 
 course_record["course"]
@@ -72,6 +71,7 @@ course_record$course
 # [[ extracts a single element from a list or other objects.
 # $ extracts a named component using its name.
 
+# PART C
 students$average <- rowMeans(students[, c("quiz1", "quiz2")])
 students$excellent <- students$average >= 90
 selected_students <- students[students$section == "A" & students$average >= 80, c("student_id", "section", "average")]
@@ -90,7 +90,7 @@ student_averages
 
 # Its vectorized because all the operations are performed aat once rather then going through each one
 
-
+# PROBLEM 2
 csv_text <- "sample_id,site,temp_c,ph,status
 M01,North,18.2,7.1,ok
 M02,South,20.5,,ok
@@ -101,6 +101,7 @@ M06,East,23.0,NA,ok
 M07,North,17.8,6.9,ok
 M08,South,21.2,7.2,ok"
 
+# PART A
 measurements <- read.csv(text = csv_text, na.strings = c("", "NA"))
 
 head(measurements)
@@ -116,6 +117,7 @@ measurements$sample_id[!complete.cases(measurements)]
 # x == NA is not a valid missing-value test because NA represents an unknown value, 
 # so comparisons involving NA generally return NA rather than true or false
 
+# PART B
 measurements$site <- factor(measurements$site)
 measurements$status <- factor(measurements$status)
 
@@ -143,7 +145,7 @@ mean(measurements$temp_c, na.rm = TRUE)
 
 mean(measurements$temp_c[measurements$site == "South"], na.rm = TRUE)
 
-
+# PART C
 A <- matrix(1:4, nrow = 2)
 B <- matrix(5:8, nrow = 2)
 
@@ -157,11 +159,11 @@ dim(A %*% B)
 
 
 
-# part 3
+# PROBLEM 3
 student_id <- paste0("P", sprintf("%02d", 1:8))
 scores <- c(95, 82, NA, 67, 74, 88, 59, 91)
 
-
+# PART A
 grade_one <- function(
   score,
   a_min = 90,
@@ -196,6 +198,7 @@ grade_one(74)
 # [1] "B"
 # [1] "C"
 
+# PART B
 grades <- rep(NA_character_, length(scores))
 for (i in seq_along(scores)) {
   grades[i] <- grade_one(scores[i])
@@ -209,6 +212,7 @@ grades
 
 # i is the number that we're on in how many people we're cycling through
 
+# PART C
 summarize_scores <- function(x, na.rm = TRUE, digits = 1) {
   result <- c(
     count = length(x),
